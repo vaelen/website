@@ -14,22 +14,35 @@ subtitle = ""
 # 
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 
+  
 [[feature]]
-  icon = "r-project"
+  icon = "user-tie"
+  icon_pack = "fas"
+  name = "Management"
+  description = ""
+  
+[[feature]]
+  icon = "users-class"
+  icon_pack = "fas"
+  name = "Public Speaking"
+  description = ""
+
+[[feature]]
+  icon = "java"
   icon_pack = "fab"
-  name = "R"
-  description = "90%"
+  name = "Java"
+  description = ""
   
 [[feature]]
-  icon = "chart-line"
-  icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
-  
+  icon = "linux"
+  icon_pack = "fab"
+  name = "Linux"
+  description = ""  
+
 [[feature]]
-  icon = "camera-retro"
+  icon = "language"
   icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Internationalization"
+  description = ""  
 
 +++
