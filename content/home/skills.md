@@ -46,9 +46,9 @@ subtitle = ""
   description = ""  
   
 [[feature]]
-  icon = "linux"
+  icon = "osi"
   icon_pack = "fab"
-  name = "Linux / Open Source"
+  name = "Open Source"
   description = ""  
 
 +++
