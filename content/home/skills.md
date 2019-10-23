@@ -22,27 +22,33 @@ subtitle = ""
   description = ""
   
 [[feature]]
-  icon = "users-class"
+  icon = "chalkboard-teacher"
   icon_pack = "fas"
-  name = "Public Speaking"
+  name = "Public Speaking / Teaching"
   description = ""
 
 [[feature]]
-  icon = "java"
-  icon_pack = "fab"
-  name = "Java"
+  icon = "hands-helping"
+  icon_pack = "fas"
+  name = "Mentoring / Coaching"
   description = ""
   
 [[feature]]
-  icon = "linux"
-  icon_pack = "fab"
-  name = "Linux"
-  description = ""  
-
+  icon = "laptop-code"
+  icon_pack = "fas"
+  name = "Software Engineering"
+  description = ""
+  
 [[feature]]
   icon = "language"
   icon_pack = "fas"
   name = "Internationalization"
+  description = ""  
+  
+[[feature]]
+  icon = "linux"
+  icon_pack = "fab"
+  name = "Linux / Open Source"
   description = ""  
 
 +++
