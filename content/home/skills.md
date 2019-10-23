@@ -18,7 +18,7 @@ subtitle = ""
 [[feature]]
   icon = "user-tie"
   icon_pack = "fas"
-  name = "Management"
+  name = "Management / Leadership"
   description = ""
   
 [[feature]]
