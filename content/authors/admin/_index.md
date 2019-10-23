@@ -15,7 +15,7 @@ role: Software Engineering Manager
 # Organizations/Affiliations
 organizations:
 - name: Infostellar
-  url: "infostellar.net"
+  url: "https://infostellar.net"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Sofware engineer, engineering manager, esperantist.
