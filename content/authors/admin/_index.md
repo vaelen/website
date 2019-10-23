@@ -22,10 +22,11 @@ bio: Sofware engineer, engineering manager, esperantist.
 
 interests:
 - Software Engineering
-- Computational Linguistics
-- Engineering Management
 - Coaching and Mentorship
+- Computational Linguistics
 - Theology
+- Esperanto
+- Japanese
 
 education:
   courses:
