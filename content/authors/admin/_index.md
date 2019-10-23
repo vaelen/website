@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Nelson Bighetti
+name: Andrew C. Young
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,34 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Software Engineering Manager
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: Infostellar
+  url: "infostellar.net"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: Sofware engineer, engineering manager, esperantist.
 
 interests:
-- Artificial Intelligence
+- Software Engineering
 - Computational Linguistics
-- Information Retrieval
+- Engineering Management
+- Coaching and Mentorship
+- Theology
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
+  - course: MA in Theology
+    institution: Austin Presbyterian Theological Seminary
+    year: 2017
+  - course: MS in Software Engineering
+    institution: University of California - Fullerton
     year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - course: BA in Linguistics (Minors in Computer Science and English)
+    institution: University of Texas at Austin
     year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -47,29 +49,33 @@ social:
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://twitter.com/lingvisto
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/vaelen
+- icon: keybase
+  icon_pack: fab
+  link: https://keybase.io/andrewyoung
+- icon: linkedin
+  icon_pack: fab
+  link: https://linkedin.com/in/vaelen
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
 #   icon_pack: ai
 #   link: files/cv.pdf
+# - icon: google-scholar
+#   icon_pack: ai
+#   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: "andrew@vaelen.org"
   
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.  
-user_groups:
-- Researchers
-- Visitors
+# user_groups:
+# - Researchers
+# - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
