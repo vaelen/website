@@ -116,6 +116,7 @@ contact_links = [
   # {icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
   # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
   {icon = "linkedin", icon_pack = "fab", name = "LinkedIn", link = "https://linkedin.com/in/vaelen"},
+]
 
 ############################
 ## Social
