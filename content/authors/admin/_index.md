@@ -22,6 +22,7 @@ bio: Sofware engineer, engineering manager, esperantist.
 
 interests:
 - Software Engineering
+- Leadership
 - Coaching and Mentorship
 - Computational Linguistics
 - Theology
