@@ -9,7 +9,7 @@ title: "A Simple Esperanto Keyboard for iPhone"
 # Set `preview_only` to `true` to just use the image for thumbnails.
 image:
   placement: 1
-  caption: "A simple Esperanto keyboard."
+  caption: ""
   focal_point: "Center"
   preview_only: false
 ---

@@ -9,7 +9,7 @@ title: "Emacs, Clojure, and Japanese"
 # Set `preview_only` to `true` to just use the image for thumbnails.
 image:
   placement: 1
-  caption: "Emacs, Clojure, and Japanese"
+  caption: ""
   focal_point: "Center"
   preview_only: false
 ---
