@@ -1,5 +1,6 @@
 ---
-date: "2009-12-28 10:10:26"
+date: "2009-12-28T10:10:26"
+lastmod: "2009-12-28T10:10:26"
 title: "First Release of Japanese Dependency Vectors"
 ---
 At the end of last semester I finished the first version of [Japanese Dependency Vectors (jpdv)](https://github.com/vaelen/jpdv).  I had to give up on using Clojure at the last minute because it was taking me too long to make progress and I needed to have some sort of a working system to turn in for my NLP final project.

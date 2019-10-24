@@ -1,5 +1,6 @@
 ---
-date: "2010-04-16 05:43:53"
+date: "2010-04-16T05:43:53"
+lastmod: "2010-04-16T05:43:53"
 title: "Huffman Coding, Unicode, and CJKV Data"
 ---
 Today I wrote a little utility in Java that compresses a file using [Huffman coding](http://en.wikipedia.org/wiki/Huffman_coding).

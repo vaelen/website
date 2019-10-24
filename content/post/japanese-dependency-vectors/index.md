@@ -1,5 +1,6 @@
 ---
-date: "2009-12-04 02:32:35"
+date: "2009-12-04T02:32:35"
+lastmod: "2009-12-04T02:32:35"
 title: "Japanese Dependency Vectors"
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.

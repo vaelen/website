@@ -1,5 +1,6 @@
 ---
-date: "2016-05-13 20:23:01"
+date: "2016-05-13T20:23:01"
+lastmod: "2016-05-13T20:23:01"
 title: "ARM Assembly: Binary Heaps"
 featured: true
 # Featured image

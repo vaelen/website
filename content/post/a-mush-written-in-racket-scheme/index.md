@@ -1,5 +1,6 @@
 ---
-date: "2013-09-03 08:47:03"
+date: "2013-09-03T08:47:03"
+lastmod: "2013-09-03T08:47:03"
 title: "A MUSH Written in Racket (Scheme)"
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.

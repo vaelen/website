@@ -1,5 +1,6 @@
 ---
-date: "2010-06-05 06:35:44"
+date: "2010-06-05T06:35:44"
+lastmod: "2010-06-05T06:35:44"
 title: "A Simple Esperanto Keyboard for iPhone"
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.

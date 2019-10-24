@@ -1,5 +1,6 @@
 ---
-date: "2009-11-28 13:26:04"
+date: "2009-11-28T13:26:04"
+lastmod: "2009-11-28T13:26:04"
 title: "Emacs, Clojure, and Japanese"
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.
