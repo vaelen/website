@@ -89,7 +89,7 @@ programming languages and technologies as well as teams of all sizes.
 He enjoys public speaking, teaching, and working with customers.
 
 Andrew began programming at the age of 10 and has always enjoyed
-working with computers.  In university he majored in Linguistics with
+working with computers.  In university he majored in linguistics with
 minors in computer science and English.  His honors thesis focused on
 natural language processing, machine learning, and semantic analysis.
 His first masters degree was in software engineering, which provided
@@ -105,5 +105,5 @@ In his free time, Andrew enjoys learning languages, traveling, hiking,
 camping, working with amateur radio equipment, watching anime, playing
 games, studying history, and discussing theology.  Andrew is a native
 speaker of American English.  He also speaks Japanese at an upper
-beginner level (JLPT N4 / CEFR A2) and Esperanto at a an upper
+beginner level (JLPT N4 / CEFR A2) and Esperanto at an upper
 intermediate level (CEFR B2).
