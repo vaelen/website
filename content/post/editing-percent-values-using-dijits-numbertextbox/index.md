@@ -21,7 +21,7 @@ If I click in the box to edit the value, it changes back to just numbers and loo
 ![2589632.00](payroll-edit.jpg)
 
 Exiting the field will reformat the displayed value to match my locale's number formatting guidelines.
-However, when I call the get("value") method on the widget, I will get back the number 2589632 instead of the formatted string.
+However, when I call the `get("value")` method on the widget, I will get back the number 2589632 instead of the formatted string.
 This makes it easily to implement locale sensitive number formatting for web applications.
 
 The problem I've been having is that percents aren't handled quite right.
