@@ -2,38 +2,45 @@
 date: "2013-08-20 22:19:35"
 title: "Regular Expression Magic and ViM"
 ---
-Every now and then I have an editing task for which Eclipse is just not up to the job.  Usually it involves making a lot of changes all at once.  (I realize that Eclipse has regex find/replace, but I feel much better working in ViM in these cases.)
+Every now and then I have an editing task for which Eclipse is just not up to the job.
+Usually it involves making a lot of changes all at once.
+(I realize that Eclipse has regex find/replace, but I feel much better working in ViM in these cases.)
 
 Here is an example:  I have a block of Java enum code that I want to split out into an enum and two maps.
 
 Here is the regular expression I use to parse the enum declaration:
 
-<pre>/\v\s*([A-Z]{2,})\((\s*[^,]*),\s*("[^"]*")\s*,\s*("[^"]*")\s*\)\s*([,;])\s*</pre>
+``` regular-expression
+/\v\s*([A-Z]{2,})\((\s*[^,]*),\s*("[^"]*")\s*,\s*("[^"]*")\s*\)\s*([,;])\s*
+```
 
 Here is an example of an enum declaration that matches this regular expression:
 
-<pre>FACEBOOK(Constants.FACEBOOK, "fbconnect://success", "fbconnect://success?error_reason"),</pre>
+``` javascript
+FACEBOOK(Constants.FACEBOOK, "fbconnect://success", "fbconnect://success?error_reason"),
+```
 
 I then run three s// commands on the input:
 
-<pre>%s//\1(\2)\5/g
+``` regular-expression
+%s//\1(\2)\5/g
 %s//callbackMap.put(Provider.\1, \3);/g
-%s//cancelMap.put(Provider.\1, \4);/g</pre>
+%s//cancelMap.put(Provider.\1, \4);/g
+```
 
-After each command I copy the buffer and paste it back into Eclipse, then hit 'u' to undo my changes so that I can run the next command on the original buffer contents.
+After each command I copy the buffer and paste it back into Eclipse, then hit `u` to undo my changes so that I can run the next command on the original buffer contents.
 
 Here's what I get (these aren't meant to be used in isolation like this, of course):
 
-<pre>FACEBOOK(Constants.FACEBOOK),
+``` javascript
+FACEBOOK(Constants.FACEBOOK),
 callbackMap.put(Provider.FACEBOOK, "fbconnect://success");
-cancelMap.put(Provider.FACEBOOK, "fbconnect://success?error_reason");</pre>
-
-For complete examples, check behind the cut.
-
-<!--more-->
+cancelMap.put(Provider.FACEBOOK, "fbconnect://success?error_reason");
+```
 
 Input:
-<pre>
+
+``` javascript
 FACEBOOK(Constants.FACEBOOK, "fbconnect://success", "fbconnect://success?error_reason"),
 TWITTER( Constants.TWITTER, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do", "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do?denied"),
 LINKEDIN(Constants.LINKEDIN, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do", "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do?oauth_problem"),
@@ -47,10 +54,12 @@ SALESFORCE( Constants.SALESFORCE, "https://socialauth.in:8443/socialauthdemo/soc
 GOOGLEPLUS( Constants.GOOGLE_PLUS, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do", "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do/?oauth_problem"),
 EMAIL(SHARE_MAIL, "", ""),
 MMS(SHARE_MMS, "", "");
-</pre>
+```
+
 
 Output #1:
-<pre>
+
+``` javascript
 FACEBOOK(Constants.FACEBOOK),
 TWITTER( Constants.TWITTER),
 LINKEDIN(Constants.LINKEDIN),
@@ -64,10 +73,12 @@ SALESFORCE( Constants.SALESFORCE),
 GOOGLEPLUS( Constants.GOOGLE_PLUS),
 EMAIL(SHARE_MAIL),
 MMS(SHARE_MMS);
-</pre>
+```
+
 
 Output #2:
-<pre>
+
+``` javascript
 callbackMap.put(Provider.FACEBOOK, "fbconnect://success");
 callbackMap.put(Provider.TWITTER, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do");
 callbackMap.put(Provider.LINKEDIN, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do");
@@ -81,10 +92,11 @@ callbackMap.put(Provider.SALESFORCE, "https://socialauth.in:8443/socialauthdemo/
 callbackMap.put(Provider.GOOGLEPLUS, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do");
 callbackMap.put(Provider.EMAIL, "");
 callbackMap.put(Provider.MMS, "");
-</pre>
+```
 
 Output #3:
-<pre>
+
+``` javascript
 cancelMap.put(Provider.FACEBOOK, "fbconnect://success?error_reason");
 cancelMap.put(Provider.TWITTER, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do?denied");
 cancelMap.put(Provider.LINKEDIN, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do?oauth_problem");
@@ -98,4 +110,4 @@ cancelMap.put(Provider.SALESFORCE, "http://socialauth.in/socialauthdemo/socialAu
 cancelMap.put(Provider.GOOGLEPLUS, "http://socialauth.in/socialauthdemo/socialAuthSuccessAction.do/?oauth_problem");
 cancelMap.put(Provider.EMAIL, "");
 cancelMap.put(Provider.MMS, "");
-</pre>
+```

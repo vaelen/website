@@ -2,17 +2,17 @@
 date: "2010-05-20 01:02:33"
 title: "XML Generation in RPG"
 ---
-The company I work for makes heavy use of their IBM Power i midrange servers (previously known as AS/400 or iSeries servers).  A lot of their software is written in the <a href="http://en.wikipedia.org/wiki/IBM_RPG">RPG programming language</a>, which IBM originally developed back in the 1960s.  The language was originally written to generate reports and lacked many "modern" programming features, such as IF statements and subroutines, which were added in RPG III.  
+The company I work for makes heavy use of their IBM Power i midrange servers (previously known as AS/400 or iSeries servers).  A lot of their software is written in the [RPG programming language](http://en.wikipedia.org/wiki/IBM_RPG), which IBM originally developed back in the 1960s.  The language was originally written to generate reports and lacked many "modern" programming features, such as IF statements and subroutines, which were added in RPG III.
 
 Since starting at my current company, I've been trying to learn the current version of RPG, which is RPG IV (aka RPGLE or ILE/RPG).  Most of the running code that I see in RPG is actually written using RPG III syntax despite the fact that RPG IV has been out since 1994.  This is mostly due to the fact that much of it was either generated programmatically or was written before 1994.  My goal in learning RPG isn't to become proficient enough to program RPG for a living, but instead to become proficient enough to help our organization transition their existing systems to more modern technologies as needed.  However, my "outsider" view of RPG (coming from a Java/Perl/Ruby/etc background) has helped me do some things with it that long time RPG programmers might not think of trying to do.  This is an example of that.
-<!--more-->
+
 Like most large enterprise development shops these days, we use a Service Oriented Architecture (SoA) for most of our newer Java and .NET services.  The problem is integrating our legacy RPG systems into these newer SoA systems.  The cleanest approach is to use data queues (aka JMS queues).  RPG can use these queues natively without having to make use of outside libraries as it would need to do in order to make socket calls.  The problem is how to structure the data that is placed on the queue.  The best thing to do would be to place a SOAP message - a type of XML document - onto the queue.  This way the SoA systems could easily pick the message up off the queue and process it just like any other SOAP message they receive.  However, this turns out to be problematic because it is difficult to produce properly formatted XML from RPG without the use of external libraries.
 
-The good news is that there are products available that can help solve this problem.  (For example, <a href="http://www.rpg-xml.com/about.aspx">The RPG XML Suite</a> and <a href="http://www.scottklement.com/presentations/#FREEXML">Scott Klement's presentation</a> on using free software to produce XML from RPG.)  However, for various reasons we are unable to use these solutions, and since we have a large pool of RPG programmers who don't yet know Java or .NET, there will still be a need to develop applications in RPG and have them interact via XML with our SoA applications.
+The good news is that there are products available that can help solve this problem.  (For example, [The RPG XML Suite](http://www.rpg-xml.com/about.aspx) and [Scott Klement's presentation](http://www.scottklement.com/presentations/#FREEXML) on using free software to produce XML from RPG.)  However, for various reasons we are unable to use these solutions, and since we have a large pool of RPG programmers who don't yet know Java or .NET, there will still be a need to develop applications in RPG and have them interact via XML with our SoA applications.
 
 To help solve this problem, and to help me learn RPG, I wrote a program that lets the programmer generate a sort of "mini DOM" for an XML document that can then produce a properly formatted and escaped XML string.  Below is the code for the program.  However, please note that I haven't tested it throughly and since I am a novice RPG programmer it is bound to have bugs in it.  I also used lots of "newer" RPG programming concepts, such as pointers, dynamic memory allocation, variable length null terminated strings, and subprocedures (which are like subroutines except that they have their own local variables and call stack that allow them to be run recursively.)
 
-<code><pre>
+``` rpg
       // This program implements a simple XML DOM Builder.
       // Written by Andrew Young <andrew@vaelen.org>
 
@@ -438,5 +438,4 @@ To help solve this problem, and to help me learn RPG, I wrote a program that let
        RETURN output;
       /END-FREE
      P escapeXML       E
-</pre>
-</code>
+```
