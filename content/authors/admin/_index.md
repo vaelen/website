@@ -36,7 +36,7 @@ education:
     institution: Austin Presbyterian Theological Seminary
     year: 2017
   - course: MS in Software Engineering
-    institution: University of California - Fullerton
+    institution: California State University - Fullerton
     year: 2012
   - course: BA in Linguistics with Departmental Honors
     institution: University of Texas at Austin
