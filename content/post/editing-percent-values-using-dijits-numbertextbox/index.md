@@ -7,8 +7,8 @@ categories:
 - Javascript
 
 ---
-[Dijit]((http://dojotoolkit.org/widgets) is a web UI toolkit built on top of the [Dojo framework](http://dojotoolkit.org/).
-One of its widgets is called [NumberTextBox]((http://dojotoolkit.org/reference-guide/dijit/form/NumberTextBox.html).
+[Dijit](http://dojotoolkit.org/widgets) is a web UI toolkit built on top of the [Dojo framework](http://dojotoolkit.org/).
+One of its widgets is called [NumberTextBox](http://dojotoolkit.org/reference-guide/dijit/form/NumberTextBox.html).
 This widget allows you to show and edit formatted numbers easily.
 
 For example, I can create an instance of [CurrencyTextBox](http://dojotoolkit.org/reference-guide/dijit/form/CurrencyTextBox.html) (a subclass of NumberTextBox) and call `set("value", 2589632)`.
