@@ -2,6 +2,12 @@
 date: "2010-04-16T05:43:53"
 lastmod: "2010-04-16T05:43:53"
 title: "Huffman Coding, Unicode, and CJKV Data"
+categories:
+- Programming
+- Algorithms
+- Internationalization
+- Japanese
+
 ---
 Today I wrote a little utility in Java that compresses a file using [Huffman coding](http://en.wikipedia.org/wiki/Huffman_coding).
 Normally Huffman coding works on 8-bit bytes.

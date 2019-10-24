@@ -2,6 +2,12 @@
 date: "2009-12-04T02:32:35"
 lastmod: "2009-12-04T02:32:35"
 title: "Japanese Dependency Vectors"
+categories:
+- Programming
+- Linguistics
+- Natural Language Processing
+- Japanese
+
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.
 # Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width

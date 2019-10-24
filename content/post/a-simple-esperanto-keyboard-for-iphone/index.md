@@ -2,6 +2,10 @@
 date: "2010-06-05T06:35:44"
 lastmod: "2010-06-05T06:35:44"
 title: "A Simple Esperanto Keyboard for iPhone"
+categories:
+- Programming
+- Esperanto
+
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.
 # Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width

@@ -2,6 +2,11 @@
 date: "2013-08-20T22:19:35"
 lastmod: "2013-08-20T22:19:35"
 title: "Regular Expression Magic and ViM"
+categories:
+- Programming
+- Regular Expressions
+- Vi
+
 ---
 Every now and then I have an editing task for which Eclipse is just not up to the job.
 Usually it involves making a lot of changes all at once.

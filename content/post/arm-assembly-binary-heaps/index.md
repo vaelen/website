@@ -3,6 +3,12 @@ date: "2016-05-13T20:23:01"
 lastmod: "2016-05-13T20:23:01"
 title: "ARM Assembly: Binary Heaps"
 featured: true
+categories:
+- Programming
+- ARM
+- Assembly
+- Data Structures
+
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.
 # Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width

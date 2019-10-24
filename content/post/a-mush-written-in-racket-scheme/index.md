@@ -2,6 +2,10 @@
 date: "2013-09-03T08:47:03"
 lastmod: "2013-09-03T08:47:03"
 title: "A MUSH Written in Racket (Scheme)"
+categories:
+- Programming
+- LISP
+
 # Featured image
 # To use, place an image named `featured.jpg/png` in your page's folder.
 # Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
