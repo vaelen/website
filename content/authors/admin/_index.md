@@ -98,7 +98,7 @@ management, requirements gathering, quality analysis, and other topics
 around the daily work of engineering quality software.  His second
 masters degree was in theology, which provided him with both theory
 and practice in mentoring, coaching, family systems theory, public
-speaking, effecting organization change, team building, and other
+speaking, effecting organizational change, team building, and other
 skills that are helpful when managing people and organizations.
 
 In his free time, Andrew enjoys learning languages, traveling, hiking,
