@@ -69,6 +69,6 @@ I am still learning assembly, but hopefully someone will find this
 useful.
 
 The code is located here:
-[https://github.com/vaelen/assembly/blob/master/arm/huffman/heap.s](https://github.com/vaelen/assembly/blob/master/arm/huffman/heap.s)
+[https://github.com/vaelen/assembly/blob/master/arm/util/heap.s](https://github.com/vaelen/assembly/blob/master/arm/util/heap.s)
 The test code is here:
-[https://github.com/vaelen/assembly/blob/master/arm/huffman/test-heap.s](https://github.com/vaelen/assembly/blob/master/arm/huffman/test-heap.s)
+[https://github.com/vaelen/assembly/blob/master/arm/util/test-heap.s](https://github.com/vaelen/assembly/blob/master/arm/util/test-heap.s)
