@@ -254,8 +254,8 @@ rsort_recurse:
     SUB     R8,R1,R0            // Check array length
     CMP     R8,#4               //
     BLT     rr_done             // Return if array is empty or has 1 entry
-    MOV     R3,R0               // R3 = 0's bin pointer (start of array)
-    MOV     R4,R1               // R4 = 1's bin pointer (end of array)
+    MOV     R3,R0               // R3 = 0s bin pointer (start of array)
+    MOV     R4,R1               // R4 = 1s bin pointer (end of array)
     MOV     R5,#0               // R5 = Current value
     MOV     R6,R0               // Set original array start (debug)
     MOV     R7,R1               // Set original array end (debug)
@@ -264,7 +264,7 @@ rr_0loop:
     TST     R5,R2               // Check bitmask
     BEQ     rr_0loop_next       // If the value is 0, loop
     BL      rr_swap             // If not, swap values
-    B       rr_1loop_next       // Switch to the 1's bin
+    B       rr_1loop_next       // Switch to the 1s bin
 rr_0loop_next:
     ADD     R3,R3,#4            // Increment the pointer
     CMP     R3,R4               // Check if pointers are the same
@@ -276,7 +276,7 @@ rr_1loop:
     TST     R5,R2               // Check bitmask
     BNE     rr_1loop_next       // If the value is 1, loop
     BL      rr_swap             // If not, swap values
-    B       rr_0loop_next       // Switch to the 0's bin
+    B       rr_0loop_next       // Switch to the 0s bin
 rr_1loop_next:
     SUB     R4,R4,#4            // Decrement the pointer
     CMP     R3,R4               // Check if pointers are the same
@@ -285,20 +285,20 @@ rr_1loop_next:
 rr_next_bit:
     LSR     R2,R2,#1            // Update bitmask to next bit
     CMP     R2,#0               // Check for all zeros
-    BEQ     rr_done             // If so, don't recurse anymore
+    BEQ     rr_done             // If so, do not recurse anymore
     MOV     R0,R6               // Array start
-    MOV     R1,R3               // 0's bin array end
+    MOV     R1,R3               // 0s bin array end
     SUB     R1,#4
-    BL      rsort_recurse       // Sort 0's bin
-    MOV     R0,R4               // 1's bin array start
+    BL      rsort_recurse       // Sort 0s bin
+    MOV     R0,R4               // 1s bin array start
     ADD     R0,#4
     MOV     R1,R7               // Array end
-    BL      rsort_recurse       // Sort 1's bin
+    BL      rsort_recurse       // Sort 1s bin
     B       rr_done             // All done
 rr_swap:
     PUSH    {LR}                // Store LR
-    MOV     R0,R3               // End of 0's bin
-    MOV     R1,R4               // End of 1's bin
+    MOV     R0,R3               // End of 0s bin
+    MOV     R1,R4               // End of 1s bin
     BL      swap                // Swap values
     POP     {PC}                // Return
 rr_done:
