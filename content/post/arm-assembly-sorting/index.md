@@ -184,7 +184,7 @@ qsort_check:
     LDR     R0,[R4]             // Load first value into R0
     LDR     R1,[R4,#4]          // Load second value into R1
     CMP     R0,R1               // Compare R0 and R1
-    BLE     qsort_done          // If R1 <= R0, then we're done
+    BLE     qsort_done          // If R1 <= R0, then we are done
     STR     R1,[R4]             // Otherwise, swap values
     STR     R0,[R4,#4]          //
 qsort_done:
