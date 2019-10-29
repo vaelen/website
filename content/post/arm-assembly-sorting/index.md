@@ -200,6 +200,7 @@ qsort_done:
 {{< youtube Tmq1UkL7xeU >}}
 
 For example, if we were going to sort a deck of 100 cards numbered 0-99, we might perform the sort like this:
+
 1. Divide the cards into piles based on their first digit (0-9), left-to-right. This results in 10 piles.
 2. For each pile, divide those cards into piles based on their second digit (0-9), left-to-right.  This results in 10 new piles for each of the first piles, each with only a single card in it.
 3. Reassemble the deck by picking up the cards from left to right and the cards will be in order.
