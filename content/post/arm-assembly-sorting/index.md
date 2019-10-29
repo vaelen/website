@@ -21,10 +21,9 @@ Below you'll find more details about each of the sorting algorithms I implemente
 
 {{< youtube Cq7SMsQBEUw >}}
 
+The algorithm is very simple, but both its average and worst case [time complexities](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) are O(N²) (quadratic), which make it fairly inefficient.  Because of this, bubble sort is almost never used in real applications. However, one nice thing about bubble sort is that when applied to an already sorted list it only requires a single iteration to verify that the list is sorted.  In this best case scenario the time complexity is O(1) (constant).
 
 {{< youtube lyZQPjUT5B4 >}}
-
-The algorithm is very simple, but both its average and worst case [time complexities](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) are O(N²) (quadratic), which make it fairly inefficient.  Because of this, bubble sort is almost never used in real applications. However, one nice thing about bubble sort is that when applied to an already sorted list it only requires a single iteration to verify that the list is sorted.  In this best case scenario the time complexity is O(1) (constant).
 
 The version provided below includes an optimization that skips the already sorted elements at the end of the array during each successive iteration.  This improves actual performance but does not change the overall time complexity.
 
@@ -86,12 +85,11 @@ bsort_done:                     // Return
 
 {{< youtube 8hEyhs3OV1w >}}
 
+The average [time complexity](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) of quicksort is O(n log n) (loglinear), making it much faster than bubble sort. However, if the pivot selected at each step is either the largest or smallest value in the list, then it effectively becomes a bubble sort and its time complexity becomes O(N²). This can be avoided by improving the pivot selection process so that it never selects either the largest or smallest value.
 
 {{< youtube ywWBy6J5gz8 >}}
 
-The average [time complexity](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) of quicksort is O(n log n) (loglinear), making it much faster than bubble sort. However, if the pivot selected at each step is either the largest or smallest value in the list, then it effectively becomes a bubble sort and its time complexity becomes O(N²). This can be avoided by improving the pivot selection process so that it never selects either the largest or smallest value.
-
-The most naive implementation simply chooses either the first value in the list or the last value to use as the pivot.  With this implementation, applying the algorithm to an already sorted list results in the worst case scenario in terms of time complexity. The code below avoids this by using the "median-of-three" pivot selection algorithm. This works by looking at the first, middle, and last values in the list and selecting the one that is the median of these three values as the pivot. In this way the code is guaranteed to never choose either the largest or smallest value in the list.
+The simplest implementation simply chooses either the first value in the list or the last value to use as the pivot.  With this implementation, applying the algorithm to an already sorted list results in the worst case scenario in terms of time complexity. The code below avoids this by using the "median-of-three" pivot selection algorithm. This works by looking at the first, middle, and last values in the list and selecting the one that is the median of these three values as the pivot. In this way the code is guaranteed to never choose either the largest or smallest value in the list.
 
 ```armasm
 /*
