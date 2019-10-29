@@ -67,8 +67,8 @@ bsort_loop:                     // Start loop
     LDR     R4,[R0,R2,LSL #2]   // R4 = Current Element Value
     LDR     R5,[R0,R3,LSL #2]   // R5 = Next Element Value
     CMP     R4,R5               // Compare element values
-    STRGT   R5,[R0,R2,LSL #2]   // If R4 > R5, store current value at next loc
-    STRGT   R4,[R0,R3,LSL #2]   // If R4 > R5, Store next value at current loc
+    STRGT   R5,[R0,R2,LSL #2]   // If R4 > R5, store current value at next
+    STRGT   R4,[R0,R3,LSL #2]   // If R4 > R5, Store next value at current
     ADDGT   R6,R6,#1            // If R4 > R5, Increment swap counter
     MOV     R2,R3               // Advance to the next element
     B       bsort_loop          // End loop
@@ -237,7 +237,7 @@ The code below implements an in-place binary MSD radix sort, also called a binar
 rsort:
     // Radix MSD sort an array of 32bit integers
     // Arguments: R0 = Array location, R1 = Array size
-    PUSH    {R0-R2,LR}          // Push the existing registers on to the stack
+    PUSH    {R0-R2,LR}          // Push existing registers on to the stack
     CMP     R1,#1               // Check for an empty or single member array
     POPLE   {R0-R7,PC}          // If so, return to where we came from
     ADD     R1,R0,R1,LSL #2     // R1 = End of the array (R0 + (R1*4))
@@ -245,7 +245,7 @@ rsort:
     MOV     R2,#1               // R2 = Bitmask
     LSL     R2,R2,#31           //   most significant bit
     BL      rsort_recurse       // Begin recursion
-    POP     {R0-R2,PC}          // Pop the registers off of the stack and return
+    POP     {R0-R2,PC}          // Pop the registers off of the stack
 
 rsort_recurse:
     // Radix MSD sort an array of 32bit integers (recursive helper)
@@ -284,7 +284,7 @@ rr_1loop_next:
     B       rr_1loop            // If not, check the next value
 rr_next_bit:
     LSR     R2,R2,#1            // Update bitmask to next bit
-    CMP     R2,#0               // Check to see if we've shifted all bits to 0
+    CMP     R2,#0               // Check for all zeros
     BEQ     rr_done             // If so, don't recurse anymore
     MOV     R0,R6               // Array start
     MOV     R1,R3               // 0's bin array end
