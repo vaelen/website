@@ -1,6 +1,6 @@
 ---
-date: "2019-10-30T06:30:00"
-lastmod: "2019-10-30T06:30:00"
+date: "2019-10-30 06:30:00+09:00"
+lastmod: "2019-10-30 06:30:00+09:00"
 title: "ARM Assembly: Sorting"
 featured: true
 categories:
@@ -8,18 +8,6 @@ categories:
 - ARM
 - Assembly
 - Algorithms
-
-# Featured image
-# To use, place an image named `featured.jpg/png` in your page's folder.
-# Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
-# Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right,
-#                      BottomLeft, Bottom, BottomRight
-# Set `preview_only` to `true` to just use the image for thumbnails.
-image:
-  placement: 1
-  caption: "xkcd.com/1185"
-  focal_point: "Center"
-  preview_only: false
 ---
 After taking a hiatus for two years, I've started working with ARM assembly language again. I realized that the code I had been working on before had become a sort of utility library, so I rearranged the [git repository](https://github.com/vaelen/assembly/tree/master/arm/util) to reflect that.
 

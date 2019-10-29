@@ -1,6 +1,6 @@
 ---
-date: "2016-05-13T20:23:01"
-lastmod: "2016-05-13T20:23:01"
+date: "2016-05-13 20:23:01-06:00"
+lastmod: "2016-05-13 20:23:01-06:00"
 title: "ARM Assembly: Binary Heaps"
 featured: true
 categories:
@@ -8,18 +8,6 @@ categories:
 - ARM
 - Assembly
 - Data Structures
-
-# Featured image
-# To use, place an image named `featured.jpg/png` in your page's folder.
-# Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
-# Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right,
-#                      BottomLeft, Bottom, BottomRight
-# Set `preview_only` to `true` to just use the image for thumbnails.
-image:
-  placement: 1
-  caption: ""
-  focal_point: "Center"
-  preview_only: false
 ---
 I got a [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) for Christmas and I've been teaching myself [ARM assembly](https://en.wikipedia.org/wiki/ARM_architecture#Instruction_set).
 

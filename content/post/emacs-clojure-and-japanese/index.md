@@ -1,24 +1,12 @@
 ---
-date: "2009-11-28T13:26:04"
-lastmod: "2009-11-28T13:26:04"
+date: "2009-11-28 13:26:04-06:00"
+lastmod: "2009-11-28 13:26:04-06:00"
 title: "Emacs, Clojure, and Japanese"
 categories:
 - Programming
 - LISP
 - Emacs
 - Japanese
-
-# Featured image
-# To use, place an image named `featured.jpg/png` in your page's folder.
-# Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
-# Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right,
-#                      BottomLeft, Bottom, BottomRight
-# Set `preview_only` to `true` to just use the image for thumbnails.
-image:
-  placement: 1
-  caption: ""
-  focal_point: "Center"
-  preview_only: false
 ---
 This might be proof that I'm crazy.
 

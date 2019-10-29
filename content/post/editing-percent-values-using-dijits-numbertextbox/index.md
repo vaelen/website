@@ -1,11 +1,10 @@
 ---
-date: "2011-07-28T20:50:28"
-lastmod: "2011-07-28T20:50:28"
+date: "2011-07-28 20:50:28-06:00"
+lastmod: "2011-07-28 20:50:28-06:00"
 title: "Editing Percent Values Using Dijit's NumberTextBox"
 categories:
 - Programming
 - Javascript
-
 ---
 [Dijit](http://dojotoolkit.org/widgets) is a web UI toolkit built on top of the [Dojo framework](http://dojotoolkit.org/).
 One of its widgets is called [NumberTextBox](http://dojotoolkit.org/reference-guide/dijit/form/NumberTextBox.html).

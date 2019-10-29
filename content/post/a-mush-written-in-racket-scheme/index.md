@@ -1,22 +1,10 @@
 ---
-date: "2013-09-03T08:47:03"
-lastmod: "2013-09-03T08:47:03"
+date: "2013-09-03 08:47:03-06:00"
+lastmod: "2013-09-03 08:47:03-06:00"
 title: "A MUSH Written in Racket (Scheme)"
 categories:
 - Programming
 - LISP
-
-# Featured image
-# To use, place an image named `featured.jpg/png` in your page's folder.
-# Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
-# Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right,
-#                      BottomLeft, Bottom, BottomRight
-# Set `preview_only` to `true` to just use the image for thumbnails.
-image:
-  placement: 1
-  caption: ""
-  focal_point: "Center"
-  preview_only: false
 ---
 I've been working on a project for the past couple days to learn the Racket programming language. Racket is based on Scheme, which is in turn based on Lisp. Racket includes a compiler that will produce a native binary on Mac OSX, Linux, or Windows as well.
 

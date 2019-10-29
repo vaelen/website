@@ -1,24 +1,12 @@
 ---
-date: "2009-12-04T02:32:35"
-lastmod: "2009-12-04T02:32:35"
+date: "2009-12-04 02:32:35-06:00"
+lastmod: "2009-12-04 02:32:35-06:00"
 title: "Japanese Dependency Vectors"
 categories:
 - Programming
 - Linguistics
 - Natural Language Processing
 - Japanese
-
-# Featured image
-# To use, place an image named `featured.jpg/png` in your page's folder.
-# Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
-# Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right,
-#                      BottomLeft, Bottom, BottomRight
-# Set `preview_only` to `true` to just use the image for thumbnails.
-image:
-  placement: 1
-  caption: ""
-  focal_point: "Center"
-  preview_only: false
 ---
 I've been working on a new project I call "Japanese Dependency Vectors" or "[jpdv](http://github.com/vaelen/jpdv)" for short.
 It's a program that generates [dependency](http://en.wikipedia.org/wiki/Dependency_grammar) based semantic [vector spaces](http://en.wikipedia.org/wiki/Vector_space_model) for Japanese text.

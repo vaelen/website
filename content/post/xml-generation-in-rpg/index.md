@@ -1,12 +1,11 @@
 ---
-date: "2010-05-20T01:02:33"
-lastmod: "2010-05-20T01:02:33"
+date: "2010-05-20 01:02:33-06:00"
+lastmod: "2010-05-20 01:02:33-06:00"
 title: "XML Generation in RPG"
 categories:
 - Programming
 - RPG
 - XML
-
 ---
 The company I work for makes heavy use of their IBM Power i midrange servers (previously known as AS/400 or iSeries servers).  A lot of their software is written in the [RPG programming language](http://en.wikipedia.org/wiki/IBM_RPG), which IBM originally developed back in the 1960s.  The language was originally written to generate reports and lacked many "modern" programming features, such as IF statements and subroutines, which were added in RPG III.
 
