@@ -11,7 +11,7 @@ categories:
 ---
 After taking a hiatus for two years, I've started working with ARM assembly language again. I realized that the code I had been working on before had become a sort of utility library, so I rearranged the [git repository](https://github.com/vaelen/assembly/tree/master/arm/util) to reflect that.
 
-While doing so, I noticed that my sorting libraries were in an incomplete state, so I decided to work on finishing them.  The result is that I now have three working sort functions that all operate in place on an existing array of 32bit signed integers. I also have the minimum heap code that I wrote about previously.  This can also be used to sort an array, although it requires the creation of a separate data structure.
+While doing so, I noticed that my sorting libraries were in an incomplete state, so I decided to work on finishing them.  The result is that I now have three working sort functions that all operate in place on an existing array of 32bit signed integers. I also have the [minimum heap code](https://github.com/vaelen/assembly/blob/master/arm/util/heap.s) that I [wrote about previously]({{< ref "/post/arm-assembly-binary-heaps/index.md" >}}).  This can also be used to sort an array, although it requires the creation of a separate data structure.
 
 Below you'll find more details about each of the sorting algorithms I implemented, along with the code.  All of the following code snippets are licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
@@ -20,6 +20,7 @@ Below you'll find more details about each of the sorting algorithms I implemente
 [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) is often one of the first sorting algorithms people learn.  It works by iterating through the list of items to be sorted and swapping items that are out of order.  After each iteration, if any swaps were made it iterates again.  This results in the largest (or smallest) value "bubbling" up to the end of the list.
 
 {{< youtube Cq7SMsQBEUw >}}
+
 
 {{< youtube lyZQPjUT5B4 >}}
 
@@ -55,7 +56,7 @@ The version provided below includes an optimization that skips the already sorte
 bsort:
     // Bubble sort an array of 32bit integers in place
     // Arguments: R0 = Array location, R1 = Array size
-    PUSH    {R0-R6,LR}          // Push the existing registers on to the stack
+    PUSH    {R0-R6,LR}          // Push registers on to the stack
 bsort_next:                     // Check for a sorted array
     MOV     R2,#0               // R2 = Current Element Number
     MOV     R6,#0               // R6 = Number of swaps
@@ -66,8 +67,8 @@ bsort_loop:                     // Start loop
     LDR     R4,[R0,R2,LSL #2]   // R4 = Current Element Value
     LDR     R5,[R0,R3,LSL #2]   // R5 = Next Element Value
     CMP     R4,R5               // Compare element values
-    STRGT   R5,[R0,R2,LSL #2]   // If R4 > R5, store current value at next index
-    STRGT   R4,[R0,R3,LSL #2]   // If R4 > R5, Store next value at current index
+    STRGT   R5,[R0,R2,LSL #2]   // If R4 > R5, store current value at next loc
+    STRGT   R4,[R0,R3,LSL #2]   // If R4 > R5, Store next value at current loc
     ADDGT   R6,R6,#1            // If R4 > R5, Increment swap counter
     MOV     R2,R3               // Advance to the next element
     B       bsort_loop          // End loop
@@ -76,7 +77,7 @@ bsort_check:                    // Check for changes
     SUBGT   R1,R1,#1            // Optimization: skip last value in next loop
     BGT     bsort_next          // If there were changes, do it again
 bsort_done:                     // Return
-    POP     {R0-R6,PC}          // Pop the registers off of the stack and return
+    POP     {R0-R6,PC}          // Pop the registers off of the stack
 ```
 
 # Quicksort
@@ -84,6 +85,7 @@ bsort_done:                     // Return
 [Quicksort](https://en.wikipedia.org/wiki/Quicksort) is often the second sorting algorithm one learns. It works by first choosing a pivot value and then dividing the list of items to be sorted into two buckets based on whether they are smaller than or larger than the pivot value.  It then repeats this process on each bucket until the entire list is sorted.
 
 {{< youtube 8hEyhs3OV1w >}}
+
 
 {{< youtube ywWBy6J5gz8 >}}
 
@@ -118,7 +120,7 @@ The most naive implementation simply chooses either the first value in the list 
 qsort:
     // Quick sort an array of 32bit integers
     // Arguments: R0 = Array location, R1 = Array size
-    PUSH    {R0-R10,LR}         // Push the existing registers on to the stack
+    PUSH    {R0-R10,LR}         // Push registers on to the stack
     MOV     R4,R0               // R4 = Array Location
     MOV     R5,R1               // R5 - Array Size
     CMP     R5,#1               // Check for an array of size <= 1
@@ -170,15 +172,15 @@ qsort_loop_u:
     BEQ     qsort_recurse
     B       qsort_loop          // Continue loop
 qsort_recurse:
-    MOV     R0,R4               // R0 = Location of the start of the array
-    MOV     R1,R7               // R1 = Length of first part of the array
-    BL      qsort               // Sort first part of array
+    MOV     R0,R4               // R0 = Location of the first bucket
+    MOV     R1,R7               // R1 = Length of the first bucket
+    BL      qsort               // Sort first bucket
     ADD     R8,R8,#1            // R8 = 1 index past final index
     CMP     R8,R5               // Compare final index to original length
     BGE     qsort_done          // If equal, return
-    ADD     R0,R4,R8,LSL #2     // R0 = Location of the second part of the array
-    SUB     R1,R5,R8            // R1 = Length of second part of the array
-    BL      qsort               // Sort second part of array
+    ADD     R0,R4,R8,LSL #2     // R0 = Location of the second bucket
+    SUB     R1,R5,R8            // R1 = Length of the second bucket
+    BL      qsort               // Sort second bucket
     B       qsort_done          // return
 qsort_check:
     LDR     R0,[R4]             // Load first value into R0
@@ -188,7 +190,7 @@ qsort_check:
     STR     R1,[R4]             // Otherwise, swap values
     STR     R0,[R4,#4]          //
 qsort_done:
-    POP     {R0-R10,PC}         // Pop the registers off of the stack and return
+    POP     {R0-R10,PC}         // Pop registers off of the stack and return
 ```
 
 # Radix Sort
@@ -251,7 +253,7 @@ rsort_recurse:
     PUSH    {R0-R8,LR}          // Store previous values
     SUB     R8,R1,R0            // Check array length
     CMP     R8,#4               //
-    BLT     rr_done             // Return if array is empty or only has 1 entry
+    BLT     rr_done             // Return if array is empty or has 1 entry
     MOV     R3,R0               // R3 = 0's bin pointer (start of array)
     MOV     R4,R1               // R4 = 1's bin pointer (end of array)
     MOV     R5,#0               // R5 = Current value
@@ -307,8 +309,8 @@ swap:
     // R0 = 1st memory location
     // R1 = 2nd memory location
     PUSH    {R0-R4,LR}          // Store previous values
-    LDR     R3,[R0]             // Grab the value from the first memory location
-    LDR     R4,[R1]             // Grab the value from the second memory location
+    LDR     R3,[R0]             // Load value from the first memory location
+    LDR     R4,[R1]             // Load value from the second memory location
     STR     R3,[R1]             // Store value 2 in memory location 1
     STR     R4,[R0]             // Store value 1 in memory location 2
     POP     {R0-R4,PC}          // Return
