@@ -1,6 +1,6 @@
 ---
-date: "2019-10-30T03:11:00"
-lastmod: "2019-10-30T03:11:00"
+date: "2019-10-30T06:30:00"
+lastmod: "2019-10-30T06:30:00"
 title: "ARM Assembly: Sorting"
 featured: true
 categories:
