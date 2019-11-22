@@ -11,7 +11,7 @@ categories:
 image:
   caption: "xkcd.com/1185"
 ---
-After taking a hiatus for two years, I've started working with ARM assembly language again. I realized that the code I had been working on before had become a sort of utility library, so I rearranged the [git repository](https://github.com/vaelen/assembly/tree/master/arm/util) to reflect that.
+After taking a hiatus for two years, I've started working with ARM assembly language again. I realized that the code I had been working on before had become a kind of utility library, so I rearranged the [git repository](https://github.com/vaelen/assembly/tree/master/arm/util) to reflect that.
 
 While doing so, I noticed that my sorting libraries were in an incomplete state, so I decided to work on finishing them.  The result is that I now have four working sort functions that all operate in place on an existing array of 32bit signed integers.
 
