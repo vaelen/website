@@ -1,6 +1,6 @@
 ---
 date: "2019-10-30 06:30:00+09:00"
-lastmod: "2019-10-30 06:30:00+09:00"
+lastmod: "2019-11-22 15:30:00+09:00"
 title: "ARM Assembly: Sorting"
 featured: true
 categories:
@@ -13,7 +13,7 @@ image:
 ---
 After taking a hiatus for two years, I've started working with ARM assembly language again. I realized that the code I had been working on before had become a sort of utility library, so I rearranged the [git repository](https://github.com/vaelen/assembly/tree/master/arm/util) to reflect that.
 
-While doing so, I noticed that my sorting libraries were in an incomplete state, so I decided to work on finishing them.  The result is that I now have three working sort functions that all operate in place on an existing array of 32bit signed integers. I also have the [minimum heap code](https://github.com/vaelen/assembly/blob/master/arm/util/heap.s) that I [wrote about previously]({{< ref "/post/arm-assembly-binary-heaps/index.md" >}}).  This can also be used to sort an array, although it requires the creation of a separate data structure.
+While doing so, I noticed that my sorting libraries were in an incomplete state, so I decided to work on finishing them.  The result is that I now have four working sort functions that all operate in place on an existing array of 32bit signed integers.
 
 Below you'll find more details about each of the sorting algorithms I implemented, along with the code.  All of the following code snippets are licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
@@ -191,6 +191,111 @@ qsort_check:
     STR     R0,[R4,#4]          //
 qsort_done:
     POP     {R0-R10,PC}         // Pop registers off of the stack and return
+```
+
+# Heapsort
+
+[Heapsort](https://en.wikipedia.org/wiki/Heapsort) works by building a [heap](https://en.wikipedia.org/wiki/Heap_(data_structure)) out of the array. Once an array has been converted to a heap, the first item is guaranteed to be either the smallest or largest value depending on whether the heap is a minimum or maximum heap, respectively. The heapsort algorithm uses a maximum heap and therefore the first value in the array will always be the largest value after the heap is created. It then swaps this value with the value at the end of the array and re-creates the heap ignoring the now properly sorted last element. The algorithm thus builds the sorted array in place from the end forward. When there are only two items left to be sorted it performs a simple comparison and swap.
+
+{{<youtube _bkow6IykGM>}}
+
+The best, worst, and average [time complexities](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) of heapsort are all O(N log N).  This is because building the heap has an average time complexity of O(log N) and this process is performed N times as the array is sorted.
+
+``` armasm
+/*
+    Copyright 2019, Andrew C. Young <andrew@vaelen.org>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+// Heapsort
+
+// Exported Methods
+    .global hsort
+
+// Code Section
+
+hsort:
+    // R0 = Array location
+    // R1 = Array length
+    PUSH    {R2-R12,LR}         // Push registers on to the stack
+    CMP     R1, #1              // If the array has size 0 or 1, return
+    BLE     hsort_done
+    CMP     R1, #2              // If the array has size 2, swap if needed
+    BLE     hsort_simple
+    MOV     R11, #1             // R11 = 1 (constant)
+    MOV     R12, #2             // R12 = 2 (constant)
+    MOV     R10, #-1            // R10 = -1 (temporarily)
+    UDIV    R10, R1, R12        // R10 = (len / 2) - 1 (start heapify index)
+    SUB     R10, R10, #1
+    SUB     R9, R1, #1          // R9 = len - 1 (start pop index)
+    MOV     R2, R10             // R2 = Starting heapify index
+heapify:
+    // R2 = Index
+    MOV     R3, R2              // R3 = Index of largest value
+    MLA     R4, R2, R12, R11    // R4 = Left index (2i+1)
+    MLA     R5, R2, R12, R12    // R5 = Right index (2i+2)
+    LDR     R6, [R0, R2, LSL#2] // R6 = Index value (R0 + (R2 * 4))
+    MOV     R7, R6              // R7 = Current largest value
+heapify_check_left:
+    CMP     R4, R9              // Check if left node is in array bounds
+    BGT     heapify_check_right // If not then check the right node
+    LDR     R8, [R0, R4, LSL#2] // R8 = Left value (R0 + (R4 * 4)
+    CMP     R8, R7              // Compare left value to largest value
+    BLE     heapify_check_right // If left <= largest check right
+    MOV     R3, R4              // If left > largest, change largest index
+    MOV     R7, R8              //    and copy the value
+heapify_check_right:
+    CMP     R5, R9              // Check if right node is in array bounds
+    BGT     heapify_swap        // If not then continue
+    LDR     R8, [R0, R5, LSL#2] // R8 = Right value (R0 + (R5 * 4))
+    CMP     R8, R7              // Compare right value to largest value
+    BLE     heapify_swap        // If right <= largest then continue
+    MOV     R3, R5              // If right > largest, change largest index
+    MOV     R7, R8              //    and copy the value
+heapify_swap:
+    CMP     R2, R3              // Check if largest is the initial value
+    BEQ     heapify_next        // If so, exit the heapify loop
+    STR     R7, [R0, R2, LSL#2] // If not, swap largest and initial values
+    STR     R6, [R0, R3, LSL#2]
+    MOV     R2, R3              //    and change index to largest index
+    B       heapify             //    and recurse
+heapify_next:
+    CMP     R10, #0             // If last index was 0, heap is finished
+    BEQ     heapify_pop
+    SUB     R10, R10, #1        // Else, heapify next index
+    MOV     R2, R10
+    B       heapify
+heapify_pop:
+    LDR     R3, [R0]            // R3 = Largest value (front of heap)
+    LDR     R4, [R0, R9, LSL#2] // R4 = Value from end of heap
+    STR     R3, [R0, R9, LSL#2] // Store largest value at end of heap
+    STR     R4, [R0]            // Store end value at start of heap
+    SUB     R9, #1              // Decrement end of heap index
+    CMP     R9, #1              // If there are only two items left, compare
+    BEQ     hsort_simple
+    MOV     R2, #0              // Else, heapify from the start of the heap
+    B       heapify
+hsort_simple:
+    // Sort a list of exactly 2 elements
+    LDR     R2, [R0]            // First value
+    LDR     R3, [R0, #4]        // Second value
+    CMP     R2, R3              // Compare values
+    STRGT   R3, [R0]            // Swap if out of order
+    STRGT   R2, [R0, #4]
+hsort_done:
+    POP     {R2-R12,PC}         // Return
 ```
 
 # Radix Sort
