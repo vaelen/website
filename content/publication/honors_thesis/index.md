@@ -1,6 +1,7 @@
+---
 title: "The Effect of Selectional Preferences on Semantic Role Labeling"
 authors:
-- admin
+- andrew
 date: "2009-08-07T00:00:00Z"
 doi: ""
 
@@ -37,7 +38,7 @@ url_source: '#'
 url_video: '#'
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
+# To use, add an image named `featured.jpg/png` to your page's folder.
 image:
   caption: ''
   focal_point: ""
@@ -63,4 +64,3 @@ Click the *Slides* button above to demo Academic's Markdown slides feature.
 {{% /alert %}}
 
 Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
-

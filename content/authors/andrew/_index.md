@@ -4,7 +4,7 @@ name: Andrew C. Young
 
 # Username (this should match the folder name)
 authors:
-- admin
+- andrew
 
 # Is this the primary user of the site?
 superuser: true
@@ -14,8 +14,8 @@ role: Software Engineering Manager
 
 # Organizations/Affiliations
 organizations:
-- name: Infostellar
-  url: "https://infostellar.net"
+- name: Indeed
+  url: "https://indeed.com"
 
 # Short bio (displayed in user profile at end of posts)
 bio: ""
