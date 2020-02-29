@@ -18,18 +18,29 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Software Engineering Manager"
+  company = "Indeed"
+  company_url = "https://indeed.com"
+  location = "Tokyo, Japan"
+  date_start = "2019-07-01"
+  date_end = ""
+  description = """
+As a Software Engineering Manager at Indeed I lead and manage a team of software engineers who are working to help people get jobs.
+
+The system my team works on serves more than 150 million requests a day across multiple geographically distributed data centers.
+  """
+
+[[experience]]
   title = "Director of Network Operations"
   company = "Infostellar"
   company_url = "https://infostellar.net"
   location = "Tokyo, Japan"
   date_start = "2019-07-01"
-  date_end = ""
+  date_end = "2020-01-31"
   description = """
-At Infostellar we're building a platform for real-time cloud based communication with extra-planetary objects. Focused initially on low earth orbit satellite communication, the eventual goal is to make real-time communication with both near earth and deep space objects as simple as possible.
+In my role as Director of Network Operations I oversaw the daily operations of our ground station network. My division worked closely with our customers and partners to ensure that our ground station network was operating properly and that our customers needs were being met. This included monitoring internal systems, maintaining both our cloud infrastructure and our ground station control devices, helping customers with any issues they may encounter, working with partners to add support for additional hardware, automating common tasks, and creating documentation.
 
-In my role as Director of Network Operations I oversee the daily operations of our ground station network. My division works closely with our customers and partners to ensure that our ground station network is operating properly and that our customers needs are being met. This includes monitoring internal systems, maintaining both our cloud infrastructure and our ground station control devices, helping customers with any issues they may encounter, working with partners to add support for additional hardware, automating common tasks, and creating documentation.
-
-In addition to overseeing the daily operation of the division, I oversee both short and long term planning, set expectations and deadlines, define objectives and key performance indicators, meet with stakeholders, customers, and external vendors, and communicate status to senior management and other divisions.
+In addition to overseeing the daily operation of the division, I oversaw both short and long term planning, set expectations and deadlines, defined objectives and key performance indicators, met with stakeholders, customers, and external vendors, and communicated status to senior management and other divisions.
   """
 
 [[experience]]
@@ -42,7 +53,7 @@ In addition to overseeing the daily operation of the division, I oversee both sh
   description = """
 In my role as Head of the Ground Systems Engineering I led and managed a team of hardware and software engineers who were designing, coding, and assembling our internet connected ground systems. In addition to overseeing the daily operation of the division, I oversaw both short and long term product planning, set expectations and deadlines, defined objectives and key performance indicators, met with stakeholders, customers, and external vendors, and communicated status to senior management and other departments.
   """
-  
+
 [[experience]]
   title = "Principal Engineer"
   company = "Infostellar"
@@ -66,7 +77,7 @@ I helped customers with issues and questions related to their use of MongoDB. Mo
 
 I was also the subject matter expert in sharding and distributed systems for the North America support team. In this role I worked with product management, trained other employees, and produced customer facing materials including presentations and knowledge base articles.
   """
-  
+
 [[experience]]
   title = "Software Engineer Team Lead"
   company = "The Boon Group"
@@ -83,9 +94,9 @@ I also developed code in C# as needed. Some of these applications were web based
 
 I implemented several process improvements that greatly improved productivity. Some examples included implementing an agile Scrum "lite" development process, setting up continuous integration and testing, building staging environments, and restructuring the team to better support our business needs.
 
-Applications I configured and managed included Jira, Confluence, Stash (git), Bamboo, Mattermost, and Octopus. I also performed system administration tasks as needed on Windows, Linux, and OpenVMS systems.  
+Applications I configured and managed included Jira, Confluence, Stash (git), Bamboo, Mattermost, and Octopus. I also performed system administration tasks as needed on Windows, Linux, and OpenVMS systems.
   """
-  
+
 [[experience]]
   title = "Senior Software Engineer"
   company = "Kabam"
@@ -96,7 +107,7 @@ Applications I configured and managed included Jira, Confluence, Stash (git), Ba
   description = """
 I worked on Kabam's distribution infrastructure. This included things like payment processing, business intelligence, account management, and customer loyalty. In this role I worked on systems running on several different stacks and written in several different languages. Server stacks included Scala/Play talking to MongoDB, PHP talking to MySQL, and Java talking to MySQL. Client stacks included web clients in Ruby on Rails, PHP, Java, and Scala/Play (including HTML, CSS, and Javascript work) as well as native clients for Android (Java), iOS (Objective C), and Unity3d (C#). I also worked on the RESTful APIs that sat between these various components and wrote SDKs for Android, iOS, and Unity3d which were integrated into existing games by internal and external game developers.
 
-As part of this work I also gave training sessions on various technologies and components, wrote user facing documentation, and interfaced with developers in the US, Canada, and China. I also travelled to Beijing to provide in-person support to our developers there. 
+As part of this work I also gave training sessions on various technologies and components, wrote user facing documentation, and interfaced with developers in the US, Canada, and China. I also travelled to Beijing to provide in-person support to our developers there.
   """
 
 [[experience]]
