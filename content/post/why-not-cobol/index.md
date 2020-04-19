@@ -7,13 +7,8 @@ categories:
 - COBOL
 ---
 
-<style>
-  .float-right {
-    float: right;
-    border: 2px black solid;
-  }
-</style>
-<img alt="Why Not COBOL?" src="why-not-cobol.jpg" class="float-right"/>
+<img alt="Why Not COBOL?" src="why-not-cobol.jpg"
+style="float: right; border: 2px black solid;"/>
 
 All the recent interest in COBOL due to its use in large
 financial systems is fascinating. Just because a language is old
