@@ -22,7 +22,7 @@ date_format = "Jan 2006"
   company = "Indeed"
   company_url = "https://indeed.com"
   location = "Tokyo, Japan"
-  date_start = "2019-07-01"
+  date_start = "2020-02-01"
   date_end = ""
   description = """
 As a Software Engineering Manager at Indeed I lead and manage a team of software engineers who are working to help people get jobs.
